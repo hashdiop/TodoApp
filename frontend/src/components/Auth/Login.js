@@ -120,16 +120,16 @@ const Login = () => {
               Mot de passe oublié ?
             </Link>
             <div className="text-gray-600 text-sm">
-            <span className={isDark ? 'text-gray-400' : ''}>Pas encore de compte ? </span>
-            <Link
-              to="/register"
-              className={`font-semibold transition-colors ${
-                isDark ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-700'
-              }`}
-            >
-              S'inscrire
-            </Link>
-          </div>
+              <span className={isDark ? 'text-gray-400' : ''}>Pas encore de compte ? </span>
+              <Link
+                to="/register"
+                className={`font-semibold transition-colors ${
+                  isDark ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-700'
+                }`}
+              >
+                S'inscrire
+              </Link>
+            </div>
           </div>
         </div>
       </div>

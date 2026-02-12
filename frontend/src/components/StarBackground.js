@@ -12,7 +12,6 @@ const StarBackground = () => {
       return;
     }
 
-    // Créer des étoiles fixes
     const generateStars = () => {
       const newStars = [];
       for (let i = 0; i < 100; i++) {
@@ -30,7 +29,6 @@ const StarBackground = () => {
 
     generateStars();
 
-    // Gérer les étoiles au curseur
     const handleMouseMove = (e) => {
       if (!isDark) return;
 
@@ -42,7 +40,6 @@ const StarBackground = () => {
 
       setCursorStars(prev => [...prev.slice(-5), star]);
 
-      // Supprimer l'étoile après l'animation
       setTimeout(() => {
         setCursorStars(prev => prev.filter(s => s.id !== star.id));
       }, 500);
@@ -61,7 +58,6 @@ const StarBackground = () => {
 
   return (
     <>
-      {/* Étoiles fixes */}
       {stars.map(star => (
         <div
           key={star.id}
@@ -75,7 +71,6 @@ const StarBackground = () => {
         />
       ))}
 
-      {/* Étoiles au curseur */}
       {cursorStars.map(star => (
         <div
           key={star.id}

@@ -31,7 +31,7 @@ Tu peux déployer **frontend** et **backend** séparément sur Vercel. C’est p
 ## Étape 2 : Déployer le Frontend
 
 1. **New Project** → importe le **même repo**.
-2. **Root Directory** : mets `frontend`.
+2. **Root Directory** : mets `frontend_new` (ou `frontend` si tu as renommé le dossier).
 3. **Framework Preset** : détecté automatiquement (Create React App).
 4. Variable d’environnement :
    - `REACT_APP_API_URL` → `https://ton-backend-xxx.vercel.app/api`
@@ -54,7 +54,7 @@ Tu peux déployer **frontend** et **backend** séparément sur Vercel. C’est p
 | Projet   | Root Directory | Variables principales           |
 |----------|----------------|---------------------------------|
 | Backend  | `backend`      | `MONGODB_URI`, `JWT_SECRET`, `FRONTEND_URL` |
-| Frontend | `frontend`     | `REACT_APP_API_URL`             |
+| Frontend | `frontend_new` | `REACT_APP_API_URL`             |
 
 ---
 
@@ -66,7 +66,7 @@ cd backend
 vercel
 
 # Frontend
-cd frontend
+cd frontend_new
 vercel
 ```
 

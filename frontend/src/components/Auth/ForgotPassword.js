@@ -22,8 +22,8 @@ const ForgotPassword = () => {
         email
       });
       setMessage(response.data.message);
-    } catch (error) {
-      setError(error.response?.data?.message || 'Erreur lors de la demande de réinitialisation');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Erreur lors de la demande de réinitialisation');
     }
 
     setLoading(false);

@@ -40,8 +40,8 @@ const ResetPassword = () => {
       setTimeout(() => {
         navigate('/login');
       }, 2000);
-    } catch (error) {
-      setError(error.response?.data?.message || 'Erreur lors de la réinitialisation');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Erreur lors de la réinitialisation');
     }
 
     setLoading(false);

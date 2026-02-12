@@ -31,7 +31,7 @@ Tu peux déployer **frontend** et **backend** séparément sur Vercel. C’est p
 ## Étape 2 : Déployer le Frontend
 
 1. **New Project** → importe le **même repo**.
-2. **Root Directory** : mets `frontend_new` (ou `frontend` si tu as renommé le dossier).
+2. **Root Directory** : mets `frontend`.
 3. **Framework Preset** : détecté automatiquement (Create React App).
 4. Variable d’environnement :
    - `REACT_APP_API_URL` → `https://ton-backend-xxx.vercel.app/api`
@@ -54,7 +54,7 @@ Tu peux déployer **frontend** et **backend** séparément sur Vercel. C’est p
 | Projet   | Root Directory | Variables principales           |
 |----------|----------------|---------------------------------|
 | Backend  | `backend`      | `MONGODB_URI`, `JWT_SECRET`, `FRONTEND_URL` |
-| Frontend | `frontend_new` | `REACT_APP_API_URL`             |
+| Frontend | `frontend`     | `REACT_APP_API_URL`             |
 
 ---
 
@@ -66,9 +66,17 @@ cd backend
 vercel
 
 # Frontend
-cd frontend_new
+cd frontend
 vercel
 ```
+
+---
+
+## Dépannage (Chrome / 404)
+
+- **404 en ouvrant ou en rafraîchissant une URL** (ex. `/todos`, `/login`) : le `vercel.json` du frontend contient maintenant des `rewrites` pour que toutes les routes renvoient vers `index.html` (SPA). Redéploie le frontend après la mise à jour.
+- **Requêtes API bloquées (CORS)** : vérifie que `REACT_APP_API_URL` pointe bien vers l’URL du backend (ex. `https://ton-backend-xxx.vercel.app/api`) et que le backend a bien `FRONTEND_URL` avec l’URL du front.
+- **Page blanche dans Chrome** : ouvre les DevTools (F12) → onglet Console et Network pour voir les erreurs éventuelles.
 
 ---
 
